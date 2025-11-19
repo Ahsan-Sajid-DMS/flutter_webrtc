@@ -9,7 +9,8 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0'
+        // AGP 8.5.1+ includes automatic 16 KB alignment for native libraries
+        classpath 'com.android.tools.build:gradle:8.5.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -63,10 +64,10 @@ android {
 }
 
 dependencies {
-    // WebRTC SDK - Check for newer version with 16 KB page size support
-    // Current version: 114.5735.08.1
-    // If native libraries still show 4 KB alignment, consider updating to latest version
-    implementation 'io.github.webrtc-sdk:android:114.5735.08.1'
+    // WebRTC SDK - Updated to latest version for 16 KB page size support
+    // Previous version: 114.5735.08.1 (Feb 2024)
+    // Latest version: 137.7151.04 (Sep 2025) - May include 16 KB alignment support
+    implementation 'io.github.webrtc-sdk:android:137.7151.04'
     implementation 'com.github.davidliu:audioswitch:89582c47c9a04c62f90aa5e57251af4800a62c9a'
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
